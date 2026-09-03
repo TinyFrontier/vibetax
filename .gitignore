@@ -3,4 +3,7 @@ dist/
 .DS_Store
 *.png
 !assets/*.png
+!site/*.png
 docs/
+.claude/launch.json
+.playwright-mcp/

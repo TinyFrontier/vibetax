@@ -2,7 +2,9 @@ name: ci
 on:
   push:
     branches: [main]
+    paths-ignore: [site/**]
   pull_request:
+    paths-ignore: [site/**]
 jobs:
   test:
     strategy:

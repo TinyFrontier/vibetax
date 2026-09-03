@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "no-median": {
+      "source": "tinyfrontier/no-median",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "30d8bf374310781cd17f64d225eeeba7024414d0bb8dae916e94b8c73f159d57"
+    }
+  }
+}
