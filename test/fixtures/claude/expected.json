@@ -1,0 +1,136 @@
+{
+ "sessions": {
+  "1e6f88bb-7003-4edb-8776-b4e02f9f979e": {
+   "project": "alpha",
+   "files": [
+    "projects/-Users-dev-work-alpha/1e6f88bb-7003-4edb-8776-b4e02f9f979e.jsonl",
+    "projects/-Users-dev-work-alpha/1e6f88bb-7003-4edb-8776-b4e02f9f979e/subagents/agent-0ce35efa4c5b48699.jsonl"
+   ],
+   "assistant_lines": 30,
+   "unique_messages": 9,
+   "usage": {
+    "input": 18,
+    "output": 21604,
+    "cacheWrite5m": 82276,
+    "cacheWrite1h": 22105,
+    "cacheRead": 636503
+   },
+   "per_model": {
+    "claude-fable-5": {
+     "input": 12,
+     "output": 20478,
+     "cacheWrite5m": 0,
+     "cacheWrite1h": 22105,
+     "cacheRead": 522813
+    },
+    "claude-sonnet-5": {
+     "input": 6,
+     "output": 1126,
+     "cacheWrite5m": 82276,
+     "cacheWrite1h": 0,
+     "cacheRead": 113690
+    }
+   },
+   "tool_calls": {
+    "Bash": 4,
+    "Edit": 2,
+    "Read": 10,
+    "Write": 1
+   },
+   "files_touched": {
+    "/Users/dev/work/alpha/README.md": 1,
+    "/Users/dev/work/alpha/docs/spec.md": 1,
+    "/Users/dev/work/alpha/package.json": 1,
+    "/Users/dev/work/alpha/src/api/handlers.ts": 1,
+    "/Users/dev/work/alpha/src/api/router.ts": 1,
+    "/Users/dev/work/alpha/src/components/Card.tsx": 4,
+    "/Users/dev/work/alpha/src/index.ts": 1,
+    "/Users/dev/work/alpha/src/lib/parse.ts": 1,
+    "/Users/dev/work/alpha/src/lib/render.ts": 1,
+    "/Users/dev/work/alpha/test/parse.test.ts": 1
+   },
+   "first_ts": "2026-08-22T15:57:35.849Z",
+   "last_ts": "2026-08-23T00:29:35.121Z",
+   "max_gap_minutes": 256.02
+  },
+  "d1c901fe-f6d0-4d77-a4a6-ca4a0d084be8": {
+   "project": "beta",
+   "files": [
+    "projects/-Users-dev-work-beta/d1c901fe-f6d0-4d77-a4a6-ca4a0d084be8.jsonl"
+   ],
+   "assistant_lines": 18,
+   "unique_messages": 8,
+   "usage": {
+    "input": 15,
+    "output": 7874,
+    "cacheWrite5m": 0,
+    "cacheWrite1h": 38304,
+    "cacheRead": 410194
+   },
+   "per_model": {
+    "claude-opus-5": {
+     "input": 15,
+     "output": 7874,
+     "cacheWrite5m": 0,
+     "cacheWrite1h": 38304,
+     "cacheRead": 410194
+    }
+   },
+   "tool_calls": {
+    "Bash": 7,
+    "ToolSearch": 1
+   },
+   "files_touched": {},
+   "first_ts": "2026-08-03T06:02:15.469Z",
+   "last_ts": "2026-08-03T06:08:36.070Z",
+   "max_gap_minutes": 2.94
+  },
+  "a020e721-edf7-47cf-997e-8f419333a544": {
+   "project": "alpha",
+   "files": [
+    "projects/-Users-dev-work-alpha/a020e721-edf7-47cf-997e-8f419333a544.jsonl"
+   ],
+   "assistant_lines": 12,
+   "unique_messages": 6,
+   "usage": {
+    "input": 12,
+    "output": 5748,
+    "cacheWrite5m": 0,
+    "cacheWrite1h": 86135,
+    "cacheRead": 369564
+   },
+   "per_model": {
+    "claude-sonnet-5": {
+     "input": 12,
+     "output": 5748,
+     "cacheWrite5m": 0,
+     "cacheWrite1h": 86135,
+     "cacheRead": 369564
+    }
+   },
+   "tool_calls": {
+    "Bash": 2,
+    "Read": 1,
+    "Write": 1
+   },
+   "files_touched": {
+    "/Users/dev/work/alpha/src/misc/file11.md": 1,
+    "/Users/dev/work/alpha/src/misc/file12.md": 1
+   },
+   "first_ts": "2026-08-25T23:16:00.632Z",
+   "last_ts": "2026-08-25T23:18:39.188Z",
+   "max_gap_minutes": 1.78
+  }
+ },
+ "all": {
+  "sessions": 3,
+  "unique_messages": 23,
+  "usage": {
+   "input": 45,
+   "output": 35226,
+   "cacheWrite5m": 82276,
+   "cacheWrite1h": 146544,
+   "cacheRead": 1416261
+  }
+ }
+}

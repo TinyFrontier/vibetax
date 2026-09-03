@@ -1,0 +1,13 @@
+{"timestamp":"2026-04-14T19:40:23.210Z","type":"session_meta","payload":{"id":"01a038be-6baa-7e3b-b036-7c0474a20840","timestamp":"2026-04-14T19:40:23.187Z","cwd":"/Users/dev/work/gamma","cli_version":"0.98.0","originator":"codex_sdk_ts","model_provider":"openai","context_window":null,"source":"exec"}}
+{"timestamp":"2026-04-14T19:40:23.211Z","type":"response_item","payload":{"type":"message","role":"developer","content":[{"type":"input_text","text":"<redacted>"}]}}
+{"timestamp":"2026-04-14T19:40:23.212Z","type":"response_item","payload":{"type":"message","role":"developer","content":[{"type":"input_text","text":"<redacted>"}]}}
+{"timestamp":"2026-04-14T19:40:23.212Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<redacted>"}]}}
+{"timestamp":"2026-04-14T19:40:23.212Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<redacted>"}]}}
+{"timestamp":"2026-04-14T19:40:23.238Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"<redacted>"}]}}
+{"timestamp":"2026-04-14T19:40:23.242Z","type":"event_msg","payload":{"type":"user_message"}}
+{"timestamp":"2026-04-14T19:40:23.243Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}
+{"timestamp":"2026-04-14T19:40:23.730Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}
+{"timestamp":"2026-04-14T19:40:24.343Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}
+{"timestamp":"2026-04-14T19:40:25.417Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}
+{"timestamp":"2026-04-14T19:40:27.130Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}
+{"timestamp":"2026-04-14T19:40:30.540Z","type":"turn_context","payload":{"model":"gpt-5.3-codex","cwd":"/Users/dev/work/gamma","turn_id":null,"effort":"low"}}

@@ -1,0 +1,38 @@
+{
+  "_comment": "USD per 1M tokens. Anthropic: platform.claude.com/docs/en/about-claude/pricing; OpenAI: developers.openai.com/api/docs/pricing. Fetched 2026-09-03. OpenAI cacheWrite1h duplicates the short-context write rate (no 1h tier there); gpt-5.6-sol is a promo price (launch was 5/30).",
+  "models": {
+    "claude-fable-5-1": { "input": 10, "output": 50, "cacheWrite5m": 12.5, "cacheWrite1h": 20, "cacheRead": 0.25 },
+    "claude-fable-5": { "input": 10, "output": 50, "cacheWrite5m": 12.5, "cacheWrite1h": 20, "cacheRead": 1 },
+    "claude-opus-5": { "input": 5, "output": 25, "cacheWrite5m": 6.25, "cacheWrite1h": 10, "cacheRead": 0.5 },
+    "claude-opus-4-8": { "input": 5, "output": 25, "cacheWrite5m": 6.25, "cacheWrite1h": 10, "cacheRead": 0.5 },
+    "claude-opus-4-7": { "input": 5, "output": 25, "cacheWrite5m": 6.25, "cacheWrite1h": 10, "cacheRead": 0.5 },
+    "claude-opus-4-6": { "input": 5, "output": 25, "cacheWrite5m": 6.25, "cacheWrite1h": 10, "cacheRead": 0.5 },
+    "claude-opus-4-5": { "input": 5, "output": 25, "cacheWrite5m": 6.25, "cacheWrite1h": 10, "cacheRead": 0.5 },
+    "claude-opus-4-1": { "input": 15, "output": 75, "cacheWrite5m": 18.75, "cacheWrite1h": 30, "cacheRead": 1.5 },
+    "claude-opus-4": { "input": 15, "output": 75, "cacheWrite5m": 18.75, "cacheWrite1h": 30, "cacheRead": 1.5 },
+    "claude-sonnet-5": { "input": 2, "output": 10, "cacheWrite5m": 2.5, "cacheWrite1h": 4, "cacheRead": 0.2 },
+    "claude-sonnet-4-6": { "input": 3, "output": 15, "cacheWrite5m": 3.75, "cacheWrite1h": 6, "cacheRead": 0.3 },
+    "claude-sonnet-4-5": { "input": 3, "output": 15, "cacheWrite5m": 3.75, "cacheWrite1h": 6, "cacheRead": 0.3 },
+    "claude-sonnet-4": { "input": 3, "output": 15, "cacheWrite5m": 3.75, "cacheWrite1h": 6, "cacheRead": 0.3 },
+    "claude-haiku-4-5": { "input": 1, "output": 5, "cacheWrite5m": 1.25, "cacheWrite1h": 2, "cacheRead": 0.1 },
+    "claude-haiku-3-5": { "input": 0.8, "output": 4, "cacheWrite5m": 1, "cacheWrite1h": 1.6, "cacheRead": 0.08 },
+    "gpt-5.6-sol": { "input": 4, "output": 20, "cacheWrite5m": 5, "cacheWrite1h": 5, "cacheRead": 0.4 },
+    "gpt-5.6-terra": { "input": 2, "output": 12, "cacheWrite5m": 2.5, "cacheWrite1h": 2.5, "cacheRead": 0.2 },
+    "gpt-5.6-luna": { "input": 0.2, "output": 1.2, "cacheWrite5m": 0.25, "cacheWrite1h": 0.25, "cacheRead": 0.02 },
+    "gpt-5.5": { "input": 5, "output": 30, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.5 },
+    "gpt-5.3-codex": { "input": 1.75, "output": 14, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.175 },
+    "gpt-5.2": { "input": 1.75, "output": 14, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.175 },
+    "gpt-5.1": { "input": 1.25, "output": 10, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.125 },
+    "gpt-5-mini": { "input": 0.25, "output": 2, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.025 },
+    "gpt-5": { "input": 1.25, "output": 10, "cacheWrite5m": 0, "cacheWrite1h": 0, "cacheRead": 0.125 }
+  },
+  "families": {
+    "codex-auto-review": "gpt-5.6-sol",
+    "opus": "claude-opus-5",
+    "sonnet": "claude-sonnet-5",
+    "haiku": "claude-haiku-4-5",
+    "gpt-5.6": "gpt-5.6-sol",
+    "codex": "gpt-5.3-codex",
+    "gpt-5": "gpt-5.5"
+  }
+}
