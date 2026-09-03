@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from "node:util";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, realpathSync } from "node:fs";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import os from "node:os";
@@ -156,6 +156,6 @@ export async function main(argv: string[], io: Io = {}): Promise<number> {
   return 0;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  process.exitCode = await main(process.argv.slice(2));
-}
+// Run only when executed directly. npm installs the bin as a symlink (node_modules/.bin/vibetax), so compare real paths.
+const entry = process.argv[1] && pathToFileURL(realpathSync(process.argv[1])).href;
+if (entry === import.meta.url) process.exitCode = await main(process.argv.slice(2));

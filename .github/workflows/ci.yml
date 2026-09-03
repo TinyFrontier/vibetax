@@ -23,6 +23,12 @@ jobs:
       - run: npm run build
       # Real render on every OS: exercises the resvg native binary and the bundled fonts.
       - run: node dist/cli.js --claude-dir test/fixtures/claude --codex-dir test/fixtures/codex --period 2026-08-01..2026-08-31 --out "${{ runner.temp }}/card.png" && test -s "${{ runner.temp }}/card.png"
+      # Install the packed tarball into an empty project and run it the way npx does (through the .bin symlink).
+      - run: |
+          npm pack --silent
+          mkdir -p "$RUNNER_TEMP/smoke" && cd "$RUNNER_TEMP/smoke" && npm init -y >/dev/null && npm i --silent "$GITHUB_WORKSPACE"/vibetax-*.tgz
+          npx vibetax --version | grep -q '^vibetax '
+          npx vibetax --claude-dir "$GITHUB_WORKSPACE/test/fixtures/claude" --codex-dir "$GITHUB_WORKSPACE/test/fixtures/codex" --period 2026-08-01..2026-08-31 --no-image | grep -q 'YOUR VIBE TAX'
       # No logs anywhere: a clear message and exit code 1, not a stack trace.
       - run: |
           set +e
