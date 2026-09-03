@@ -23,4 +23,8 @@ jobs:
       - run: npm run build
       # Real render on every OS: exercises the resvg native binary and the bundled fonts.
       - run: node dist/cli.js --claude-dir test/fixtures/claude --codex-dir test/fixtures/codex --period 2026-08-01..2026-08-31 --out "${{ runner.temp }}/card.png" && test -s "${{ runner.temp }}/card.png"
-      - run: node dist/cli.js --claude-dir "${{ runner.temp }}/nope" --codex-dir "${{ runner.temp }}/nope"; test $? -eq 1
+      # No logs anywhere: a clear message and exit code 1, not a stack trace.
+      - run: |
+          set +e
+          node dist/cli.js --claude-dir "$RUNNER_TEMP/nope" --codex-dir "$RUNNER_TEMP/nope"
+          test $? -eq 1
