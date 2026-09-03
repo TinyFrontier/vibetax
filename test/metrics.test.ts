@@ -29,7 +29,7 @@ describe("computeMetrics", () => {
     // => $5.00/turn => $20.00 total, 4,000,000 tokens total.
     // Gaps: 10:00->10:10 = 10min (counted, 600_000ms), 10:10->10:50 = 40min (>30min, contributes 0),
     // 10:50->11:00 = 10min (counted, 600_000ms) => agentTimeMs = 1_200_000.
-    // Session span 10:00->11:00 = 3_600_000ms (no pause cut) => longestSessionMs candidate.
+    // Active time 10min + 10min = 1_200_000ms is also the longest session (same pause cut).
     const s1: Session = {
       agent: "claude-code",
       id: "s1",
@@ -124,8 +124,8 @@ describe("computeMetrics", () => {
     expect(metrics.totalTokens).toBe(8_000_000);
     // agentTimeMs: only s1 contributes, 10min + 10min (40min gap cut) = 20min = 1_200_000ms.
     expect(metrics.agentTimeMs).toBe(1_200_000);
-    // longestSessionMs: s1 spans 60min = 3_600_000ms, no pause cut; s2/s3 are 0-length single turns.
-    expect(metrics.longestSessionMs).toBe(3_600_000);
+    // longestSessionMs: s1 active time 20min = 1_200_000ms (the 40-min gap is cut); s2/s3 are single turns = 0.
+    expect(metrics.longestSessionMs).toBe(1_200_000);
     // mostExpensiveDay: 2026-08-10 has all 4 of s1's $5 turns = $20, beats 08-11 ($2) and 08-12 ($3).
     expect(metrics.mostExpensiveDay).toEqual({ date: "2026-08-10", cost: 20 });
     // favoriteTool: Bash appears 3 times (s1 turns 1, 2, 4), Edit 2, Read 1.

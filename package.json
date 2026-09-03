@@ -1,6 +1,6 @@
 {
   "name": "vibetax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "What's your vibe tax this month? Local-only Spotify-Wrapped-style card for Claude Code and Codex spend.",
   "keywords": [
     "claude-code",

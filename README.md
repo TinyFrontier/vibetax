@@ -102,7 +102,7 @@ The number is the **API-equivalent cost**: what the same tokens would have cost 
 | Metric | Definition |
 |---|---|
 | Agent time | Sum of gaps between consecutive API calls inside a session; a gap longer than 30 minutes counts as zero |
-| Longest session | Last call minus first call, no pause cut. A tab left open overnight will show here |
+| Longest session | The most active time inside one session, with the same 30-minute pause cut |
 | Most expensive day, peak hour | In your local time zone |
 | Favorite tool | Most frequent tool call name |
 | Most touched file | Most frequent path in Edit/Write/Read calls and Codex patches, shown as `folder/name` |

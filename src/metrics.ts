@@ -66,13 +66,16 @@ export function computeMetrics(sessions: Session[], period: Period, table: Price
   for (const s of sessions) {
     agents.add(s.agent);
     if (!s.background) sessionCount++;
-    longestSessionMs = Math.max(longestSessionMs, s.endedAt.getTime() - s.startedAt.getTime());
-
+    // Active time per session: gaps between consecutive calls, a gap over 30 min counts as idle (0).
+    // Longest session uses the same rule, otherwise one tab left open overnight shows as a 9-hour session.
     const turns = [...s.turns].sort((a, b) => a.at.getTime() - b.at.getTime());
+    let active = 0;
     for (let i = 1; i < turns.length; i++) {
       const gap = turns[i]!.at.getTime() - turns[i - 1]!.at.getTime();
-      if (gap <= IDLE_GAP_MS) agentTimeMs += gap;
+      if (gap <= IDLE_GAP_MS) active += gap;
     }
+    agentTimeMs += active;
+    longestSessionMs = Math.max(longestSessionMs, active);
 
     for (const t of turns) {
       const u = t.usage;
