@@ -1,5 +1,7 @@
 # vibetax
 
+[![ci](https://github.com/TinyFrontier/vibetax/actions/workflows/ci.yml/badge.svg)](https://github.com/TinyFrontier/vibetax/actions/workflows/ci.yml) [![npm](https://img.shields.io/npm/v/vibetax)](https://www.npmjs.com/package/vibetax)
+
 **Everything runs on your machine. vibetax makes no network requests: no uploads, no telemetry, no version checks.**
 
 > What's your vibe tax this month?

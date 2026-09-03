@@ -1,0 +1,14 @@
+{
+  "name": "vibe-tax",
+  "version": "0.1.0",
+  "description": "Alias of vibetax: what's your vibe tax this month? Local-only receipt for Claude Code and Codex spend.",
+  "homepage": "https://github.com/TinyFrontier/vibetax#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/TinyFrontier/vibetax.git", "directory": "alias/vibe-tax" },
+  "author": "TinyFrontier",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "vibe-tax": "bin.js" },
+  "files": ["bin.js"],
+  "engines": { "node": ">=20.12" },
+  "dependencies": { "vibetax": "0.1.0" }
+}

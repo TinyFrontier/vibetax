@@ -1,0 +1,26 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: [20, 22]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      # Real render on every OS: exercises the resvg native binary and the bundled fonts.
+      - run: node dist/cli.js --claude-dir test/fixtures/claude --codex-dir test/fixtures/codex --period 2026-08-01..2026-08-31 --out "${{ runner.temp }}/card.png" && test -s "${{ runner.temp }}/card.png"
+      - run: node dist/cli.js --claude-dir "${{ runner.temp }}/nope" --codex-dir "${{ runner.temp }}/nope"; test $? -eq 1

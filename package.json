@@ -1,7 +1,27 @@
 {
   "name": "vibetax",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "What's your vibe tax this month? Local-only Spotify-Wrapped-style card for Claude Code and Codex spend.",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "cli",
+    "usage",
+    "cost",
+    "tokens",
+    "wrapped",
+    "vibe-coding"
+  ],
+  "homepage": "https://github.com/TinyFrontier/vibetax#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyFrontier/vibetax.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TinyFrontier/vibetax/issues"
+  },
+  "author": "TinyFrontier",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "vibetax": "dist/cli.js"
@@ -17,15 +37,15 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
-  "license": "MIT",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  },
   "devDependencies": {
     "@types/node": "^26.4.1",
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
-  },
-  "dependencies": {
-    "@resvg/resvg-js": "^2.6.2"
   }
 }
