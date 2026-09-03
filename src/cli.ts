@@ -104,14 +104,14 @@ export async function main(argv: string[], io: Io = {}): Promise<number> {
   if (!values.json) err(`vibetax · scanning ${dirsList} …\n`);
 
   const [claudeResult, codexResult] = await Promise.all([
-    wantClaude ? scanClaude(claudeDir, spec.period) : Promise.resolve({ sessions: [], warnings: [] }),
-    wantCodex ? scanCodex(codexDir, spec.period) : Promise.resolve({ sessions: [], warnings: [] }),
+    wantClaude ? scanClaude(claudeDir, spec.period) : Promise.resolve({ sessions: [], warnings: [], files: 0 }),
+    wantCodex ? scanCodex(codexDir, spec.period) : Promise.resolve({ sessions: [], warnings: [], files: 0 }),
   ]);
   const sessions = [...claudeResult.sessions, ...codexResult.sessions];
   const scanWarnings = [...claudeResult.warnings, ...codexResult.warnings];
 
   if (sessions.length === 0) {
-    if (scanWarnings.length === 0) err(`no Claude Code or Codex logs found in ${dirsList} — pass --claude-dir / --codex-dir if they live elsewhere\n`);
+    if (claudeResult.files + codexResult.files === 0) err(`no Claude Code or Codex logs found in ${dirsList} — pass --claude-dir / --codex-dir if they live elsewhere\n`);
     else err(`no sessions in ${spec.label} — try --period 90d or --period all\n`);
     return 1;
   }

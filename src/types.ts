@@ -34,6 +34,7 @@ export type Session = {
 /** Half-open range: from <= at < to. */
 export type Period = { from: Date; to: Date };
 
-export type ScanResult = { sessions: Session[]; warnings: string[] };
+/** files = log files found on disk (before the mtime skip), so the CLI can tell "no logs" from "nothing in this period". */
+export type ScanResult = { sessions: Session[]; warnings: string[]; files: number };
 
 export const EMPTY_USAGE: Usage = { input: 0, output: 0, cacheWrite5m: 0, cacheWrite1h: 0, cacheRead: 0 };

@@ -18,6 +18,15 @@ describe("parsePeriod", () => {
     expect(label).toBe("last 30 days");
   });
 
+  it("rejects dates that are not on the calendar and reversed ranges", () => {
+    expect(() => parsePeriod("2026-13-01..2026-08-15", now)).toThrow(/calendar/);
+    expect(() => parsePeriod("2026-02-30..2026-03-01", now)).toThrow(/calendar/);
+    expect(() => parsePeriod("2026-08-15..2026-08-01", now)).toThrow(/after end/);
+    const day = parsePeriod("2026-08-10..2026-08-10", now); // a single day is fine
+    expect(day.period.from.toISOString()).toBe("2026-08-10T00:00:00.000Z");
+    expect(day.period.to.toISOString()).toBe("2026-08-11T00:00:00.000Z");
+  });
+
   it("ytd: from local Jan 1 of now's year", () => {
     const { period, label } = parsePeriod("ytd", now);
     expect(period.from.toISOString()).toBe("2026-01-01T00:00:00.000Z");

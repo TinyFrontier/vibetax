@@ -95,7 +95,7 @@ export async function scanClaude(dir: string, period: Period): Promise<ScanResul
   try {
     entries = (await readdir(projectsDir, { recursive: true })).filter((f) => f.endsWith(".jsonl"));
   } catch {
-    return { sessions: [], warnings: [] };
+    return { sessions: [], warnings: [], files: 0 };
   }
 
   const warnings: string[] = [];
@@ -124,5 +124,5 @@ export async function scanClaude(dir: string, period: Period): Promise<ScanResul
     const endedAt = turnList[turnList.length - 1]!.at;
     result.push({ agent: "claude-code", id, project, startedAt, endedAt, turns: turnList });
   }
-  return { sessions: result, warnings };
+  return { sessions: result, warnings, files: entries.length };
 }

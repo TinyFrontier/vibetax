@@ -134,7 +134,7 @@ export async function scanCodex(dir: string, period: Period): Promise<ScanResult
       continue; // root doesn't exist
     }
   }
-  if (files.length === 0) return { sessions: [], warnings: [] };
+  if (files.length === 0) return { sessions: [], warnings: [], files: 0 };
 
   const defaultModel = await readDefaultModel(dir);
   const warnings: string[] = [];
@@ -182,5 +182,5 @@ export async function scanCodex(dir: string, period: Period): Promise<ScanResult
     if (sess.threadSource === "guardian_review") session.background = true;
     result.push(session);
   }
-  return { sessions: result, warnings };
+  return { sessions: result, warnings, files: files.length };
 }

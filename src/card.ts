@@ -29,6 +29,11 @@ export function parsePeriod(text: string, now: Date): PeriodSpec {
   if (range) {
     const [, ay, am, ad, by, bm, bd] = range.map(Number);
     const from = new Date(ay!, am! - 1, ad!);
+    const end = new Date(by!, bm! - 1, bd!);
+    // Date() silently rolls 2026-13-01 into 2027; a real calendar date survives the round trip unchanged.
+    const real = (d: Date, y: number, mo: number, day: number) => d.getFullYear() === y && d.getMonth() === mo - 1 && d.getDate() === day;
+    if (!real(from, ay!, am!, ad!) || !real(end, by!, bm!, bd!)) throw new Error(`invalid --period "${text}": not a calendar date`);
+    if (from > end) throw new Error(`invalid --period "${text}": start is after end`);
     const to = new Date(by!, bm! - 1, bd! + 1); // half-open: day after B
     const label =
       ay === by ? `${shortDate(ay!, am!, ad!)} – ${shortDate(by!, bm!, bd!)}, ${by}` : `${shortDate(ay!, am!, ad!)}, ${ay} – ${shortDate(by!, bm!, bd!)}, ${by}`;

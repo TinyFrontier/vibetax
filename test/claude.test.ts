@@ -89,6 +89,6 @@ describe("scanClaude", () => {
   });
 
   it("returns an empty result when the claude dir doesn't exist", async () => {
-    expect(await scanClaude(path.join(tmpdir(), "vibetax-nope-" + Date.now()), AUGUST)).toEqual({ sessions: [], warnings: [] });
+    expect(await scanClaude(path.join(tmpdir(), "vibetax-nope-" + Date.now()), AUGUST)).toEqual({ sessions: [], warnings: [], files: 0 });
   });
 });

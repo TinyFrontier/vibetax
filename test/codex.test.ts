@@ -193,7 +193,7 @@ describe("scanCodex", () => {
   });
 
   it("returns an empty result when the codex dir doesn't exist", async () => {
-    expect(await scanCodex(path.join(tmpdir(), "vibetax-nope-" + Date.now()), FULL)).toEqual({ sessions: [], warnings: [] });
+    expect(await scanCodex(path.join(tmpdir(), "vibetax-nope-" + Date.now()), FULL)).toEqual({ sessions: [], warnings: [], files: 0 });
   });
 
   it("falls back to config.toml's model when a session has no turn_context", async () => {
