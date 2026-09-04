@@ -18,5 +18,7 @@ jobs:
       - run: npm install -g npm@latest # trusted publishing needs npm >= 11.5.1
       - run: npm ci
       - run: npm test
-      # no token: npm trusts this workflow via OIDC (npmjs.com > vibetax > trusted publisher)
-      - run: npm publish --provenance --access public
+      # no token: npm trusts this workflow via OIDC (npmjs.com > vibetax > trusted publisher).
+      # stage, don't publish: the tarball waits for `npm stage approve` and a human 2FA prompt,
+      # so a compromised pipeline cannot ship to users on its own.
+      - run: npm stage publish . --provenance --access public
